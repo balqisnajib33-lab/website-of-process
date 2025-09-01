@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process 1.1: Request Submission</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+<body>
+     <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-left">
+                <!-- Replace src with your logo path -->
+                <img src="cenviro.png" alt="Company Logo" class="company-logo">
+                <span class="company-name">OPERATION DEPARTMENT</span>
+            </div>
+            <ul class="menu">
+                <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> HOME</a></li>
+				<li><a href="processes.html"><i class="fa-solid fa-list-check"></i> PROCESSES</a></li>
+				<li><a href="about.html"><i class="fa-solid fa-circle-info"></i> ABOUT</a></li>
+                <li><a href="contact.html"><i class="fa-solid fa-phone"></i> CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <h1>Process 1.1: Request Submission</h1>
+        <p>
+            <strong>Purpose:</strong> To initiate a procurement request within the department.<br>
+            <strong>Steps:</strong>
+            <ol>
+                <li>User logs in to the procurement system.</li>
+                <li>Fills out the request form with required details.</li>
+                <li>Attaches necessary supporting documents.</li>
+                <li>Submits the request for review.</li>
+            </ol>
+            <strong>Responsible:</strong> All staff requiring procurement.<br>
+            <strong>Related Documents:</strong> Procurement Request Form (PRF-001).
+        </p>
+        <a href="processes.html" style="color:#04396c;text-decoration:underline;">&#8592; Back to Processes</a>
+    </main>
+    <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar').innerHTML = data;
+        // Set "active" menu item
+        const path = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.menu li a').forEach(link => {
+          if(link.getAttribute('href') === path || link.getAttribute('href') === 'processes.html') {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+</body>
+</html>
