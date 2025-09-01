@@ -40,20 +40,8 @@
         </p>
         <a href="processes.html" style="color:#04396c;text-decoration:underline;">&#8592; Back to Processes</a>
     </main>
-    <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('navbar').innerHTML = data;
-        // Set "active" menu item
-        const path = window.location.pathname.split('/').pop() || 'index.html';
-        document.querySelectorAll('.menu li a').forEach(link => {
-          if(link.getAttribute('href') === path || link.getAttribute('href') === 'processes.html') {
-            link.classList.add('active');
-          }
-        });
-      });
-    </script>
+     <script src="script.js"></script>
 </body>
 
 </html>
+
